@@ -16,8 +16,8 @@ An intelligent email automation system that reads incoming emails and generates 
 4. The user can use website or chrome extension as per choice.
 ## 🛠️ Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript (or React/Thymeleaf if mentioned)
-- **Backend**: Java Spring Boot / Node.js (based on your stack)
+- **Frontend**: React, Tailwind CSS, JS
+- **Backend**: Java Spring Boot
 - **AI Engine**: Gemini API for reply generation
 
 ## 📷 Screenshots
