@@ -1,0 +1,6 @@
+com\email_writer\model\EmailRequest.class
+com\email_writer\controller\EmailController.class
+com\email_writer\config\WebConfig.class
+com\email_writer\config\WebConfig$1.class
+com\email_writer\services\EmailGeneratorService.class
+com\email_writer\EmailWriterApplication.class
