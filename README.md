@@ -30,8 +30,3 @@ An intelligent email automation system that reads incoming emails and generates 
 
 ## 📼 Demo
 
-https://github.com/yourusername/yourrepo/assets/yourvideoid/EmailReply.mkv
-
-> You can upload the video on GitHub or YouTube and embed the link here.
-
-
