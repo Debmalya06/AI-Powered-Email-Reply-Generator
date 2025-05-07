@@ -154,25 +154,47 @@ function App() {
         </div>
 
         <div className="mt-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-md p-6 text-white">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0 md:mr-6">
-              <h2 className="text-xl font-bold mb-2">Try Our Chrome Extension</h2>
-              <p className="text-purple-100">
-                Use our AI email assistant directly in your browser with our Chrome extension. Write better emails
-                faster, anywhere on the web.
-              </p>
-              <button className="mt-4 bg-white text-purple-700 hover:bg-purple-50 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center">
-                <Chrome className="h-4 w-4 mr-2" />
-                Add to Chrome
-              </button>
-            </div>
-            <div className="w-full md:w-1/3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="bg-white/20 rounded-md p-3 mb-3"></div>
-              <div className="bg-white/20 rounded-md p-2 w-3/4 mb-2"></div>
-              <div className="bg-white/20 rounded-md p-2 w-1/2"></div>
-            </div>
-          </div>
-        </div>
+  <div className="flex flex-col md:flex-row items-center justify-between">
+    <div className="mb-6 md:mb-0 md:mr-6">
+      <h2 className="text-xl font-bold mb-2">Try Our Chrome Extension</h2>
+      <p className="text-purple-100">
+        Use our AI email assistant directly in your browser with our Chrome extension. Write better emails
+        faster, anywhere on the web.
+      </p>
+      <a
+        href="https://drive.google.com/file/d/132PN9Zapf6xvviK9-1SLi7F7vtUi_0Rd/view?usp=drivesdk"
+        download
+        className="mt-4 bg-white text-purple-700 hover:bg-purple-50 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center"
+      >
+        <Chrome className="h-4 w-4 mr-2" />
+        Add to Chrome
+      </a>
+    </div>
+    <div className="w-full md:w-1/3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+  <div className="bg-white/20 rounded-md p-3 mb-3">
+    <img
+      src="https://via.placeholder.com/150" // Replace with the actual image URL or path
+      alt="Chrome Extension Preview"
+      className="rounded-md shadow-md"
+    />
+  </div>
+  <div className="bg-white/20 rounded-md p-2 w-3/4 mb-2">
+    <p className="text-white text-sm">
+      Preview how the Chrome extension integrates seamlessly with Gmail to help you write better emails.
+    </p>
+  </div>
+  <div className="bg-white/20 rounded-md p-2 w-1/2">
+    <a
+      href="c:\\Users\\debma\\Downloads\\email_Extension.zip"
+      download
+      className="text-purple-200 hover:text-white transition duration-200 text-sm"
+    >
+      Download Extension
+    </a>
+  </div>
+</div>
+  </div>
+</div>
       </main>
 
       <footer className="bg-gray-800 text-white py-6 mt-12">
