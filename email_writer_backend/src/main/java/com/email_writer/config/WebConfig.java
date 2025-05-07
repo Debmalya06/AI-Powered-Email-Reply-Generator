@@ -15,7 +15,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("https://mail.google.com", "http://localhost:5175") // Add allowed origins
+                        .allowedOrigins("https://mail.google.com", "http://localhost:5174","https://ai-powered-email-reply-generator-1.onrender.com") // Add allowed origins
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

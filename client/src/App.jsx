@@ -28,7 +28,7 @@ function App() {
     setError("");
   
     try {
-      const response = await axios.post("http://localhost:8080/api/email/generate", {
+      const response = await axios.post("https://email-writer-backend-latest.onrender.com/api/email/generate", {
         content: emailContent,
         tone: tone,
       });

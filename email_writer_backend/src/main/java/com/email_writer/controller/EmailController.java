@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/api/email")
 @AllArgsConstructor
-@CrossOrigin(origins = {"https://mail.google.com", "http://localhost:5175"})
+@CrossOrigin(origins = {"https://mail.google.com", "http://localhost:5174"})
 
 public class EmailController {
 
