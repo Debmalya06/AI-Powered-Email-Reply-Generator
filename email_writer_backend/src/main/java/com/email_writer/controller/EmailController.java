@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/api/email")
 @AllArgsConstructor
-@CrossOrigin(origins = {"https://mail.google.com", "http://localhost:5174"})
+@CrossOrigin(origins = {"https://mail.google.com", "http://localhost:5173"})
 
 public class EmailController {
 
@@ -23,6 +23,13 @@ public class EmailController {
 
     @PostMapping("/generate")
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest) {
+        if (emailRequest.getEmailContent() == null || emailRequest.getEmailContent().isEmpty()) {
+            return ResponseEntity.badRequest().body("Error: Email content is missing.");
+        }
+        if (emailRequest.getTone() == null || emailRequest.getTone().isEmpty()) {
+            return ResponseEntity.badRequest().body("Error: Tone is missing.");
+        }
+    
         System.out.println("Received EmailRequest: " + emailRequest);
         String response = emailGeneratorService.generateEmailReply(emailRequest);
         System.out.println("Generated Response: " + response);

@@ -28,13 +28,13 @@ function App() {
     setError("");
   
     try {
-      const response = await axios.post("https://email-writer-backend-latest.onrender.com/api/email/generate", {
-        content: emailContent,
-        tone: tone,
+      const response = await axios.post("http://localhost:8080/api/email/generate", {
+        emailContent: emailContent, // Correct key
+        tone: tone, // Correct key
       });
   
       console.log("Backend Response:", response.data); // Debugging log
-      setAiResponse(response.data.response || response.data);
+      setAiResponse(response.data); // Update state with the response
     } catch (err) {
       console.error("Error generating email:", err);
       setError("Failed to generate email. Please try again.");
@@ -142,15 +142,17 @@ function App() {
           </div>
 
           <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">AI Response</h2>
-            <div className="border border-gray-200 rounded-md p-4 min-h-[300px] bg-gray-50">
-              {aiResponse ? (
-                <div className="whitespace-pre-line">{aiResponse}</div>
-              ) : (
-                <div className="text-gray-400 italic">Your AI-generated email will appear here...</div>
-              )}
-            </div>
-          </div>
+  <h2 className="text-lg font-semibold text-gray-800 mb-4">AI Response</h2>
+  <div className="border border-gray-200 rounded-md p-4 min-h-[300px] bg-gray-50">
+    {error ? (
+      <div className="text-red-500">{error}</div>
+    ) : aiResponse ? (
+      <div className="whitespace-pre-line">{aiResponse}</div>
+    ) : (
+      <div className="text-gray-400 italic">Your AI-generated email will appear here...</div>
+    )}
+  </div>
+</div>
         </div>
 
         <div className="mt-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-md p-6 text-white">
