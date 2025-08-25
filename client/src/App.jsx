@@ -52,12 +52,15 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom right, #E8F5E8, #D4E6D4)' }}>
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            <Mail className="h-6 w-6 text-purple-600 mr-2" />
-            <h1 className="text-xl font-bold text-gray-800">Email AI Assistant</h1>
+            <img 
+              src="/replygenius-logo.svg" 
+              alt="ReplyGenius Logo" 
+              className="h-12 w-auto"
+            />
           </div>
           <div className="flex items-center space-x-2">
             <Users className="h-5 w-5 text-gray-600" />
@@ -78,7 +81,8 @@ function App() {
                 <div className="relative">
                   <button
                     type="button"
-                    className="w-full flex items-center justify-between bg-white border border-gray-300 rounded-md px-4 py-2 text-sm text-left focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full flex items-center justify-between bg-white border border-gray-300 rounded-md px-4 py-2 text-sm text-left focus:outline-none focus:ring-2"
+                    style={{ '--tw-ring-color': '#038762' }}
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   >
                     {toneOptions.find((option) => option.value === tone)?.label}
@@ -90,7 +94,12 @@ function App() {
                       {toneOptions.map((option) => (
                         <div
                           key={option.value}
-                          className="px-4 py-2 hover:bg-purple-50 cursor-pointer"
+                          className="px-4 py-2 cursor-pointer"
+                          style={{ 
+                            '&:hover': { backgroundColor: '#E8F5E8' }
+                          }}
+                          onMouseEnter={(e) => e.target.style.backgroundColor = '#E8F5E8'}
+                          onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
                           onClick={() => {
                             setTone(option.value)
                             setIsDropdownOpen(false)
@@ -111,7 +120,8 @@ function App() {
                 <textarea
                   id="emailContent"
                   rows={8}
-                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2"
+                  style={{ '--tw-ring-color': '#038762' }}
                   placeholder="Type your email content here..."
                   value={emailContent}
                   onChange={(e) => setEmailContent(e.target.value)}
@@ -122,7 +132,13 @@ function App() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md transition duration-200 flex items-center justify-center"
+                className="w-full text-white font-medium py-2 px-4 rounded-md transition duration-200 flex items-center justify-center"
+                style={{ 
+                  backgroundColor: '#038762',
+                  '&:hover': { backgroundColor: '#026B4F' }
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#026B4F'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#038762'}
               >
                 {isLoading ? (
                   <>
@@ -155,48 +171,137 @@ function App() {
 </div>
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-md p-6 text-white">
-  <div className="flex flex-col md:flex-row items-center justify-between">
-    <div className="mb-6 md:mb-0 md:mr-6">
-      <h2 className="text-xl font-bold mb-2">Try Our Chrome Extension</h2>
-      <p className="text-purple-100">
-        Use our AI email assistant directly in your browser with our Chrome extension. Write better emails
-        faster, anywhere on the web.
-      </p>
-      <a
-        href="https://drive.google.com/file/d/132PN9Zapf6xvviK9-1SLi7F7vtUi_0Rd/view?usp=drivesdk"
-        download
-        className="mt-4 bg-white text-purple-700 hover:bg-purple-50 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center"
-      >
-        <Chrome className="h-4 w-4 mr-2" />
-        Add to Chrome
-      </a>
-    </div>
-    <div className="w-full md:w-1/3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-  <div className="bg-white/20 rounded-md p-3 mb-3">
-    <img
-      src="https://via.placeholder.com/150" // Replace with the actual image URL or path
-      alt="Chrome Extension Preview"
-      className="rounded-md shadow-md"
-    />
-  </div>
-  <div className="bg-white/20 rounded-md p-2 w-3/4 mb-2">
-    <p className="text-white text-sm">
-      Preview how the Chrome extension integrates seamlessly with Gmail to help you write better emails.
-    </p>
-  </div>
-  <div className="bg-white/20 rounded-md p-2 w-1/2">
-    <a
-      href="c:\\Users\\debma\\Downloads\\email_Extension.zip"
-      download
-      className="text-purple-200 hover:text-white transition duration-200 text-sm"
-    >
-      Download Extension
-    </a>
-  </div>
-</div>
-  </div>
-</div>
+        {/* Chrome Extension Section - Redesigned */}
+        <div className="mt-12 bg-white rounded-xl shadow-lg overflow-hidden">
+          {/* Header Section */}
+          <div className="text-center py-8 px-6" style={{ background: 'linear-gradient(135deg, #038762, #026B4F)' }}>
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+              <Chrome className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-white mb-2">ReplyGenius Extension</h2>
+            <p className="text-lg" style={{ color: '#D4E6D4' }}>
+              Supercharge your email workflow
+            </p>
+          </div>
+
+          {/* Content Section */}
+          <div className="p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Left Content */}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    Write Better Emails, Faster
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Get AI-powered email suggestions directly in Gmail, Outlook, and any email platform. 
+                    Our Chrome extension seamlessly integrates with your workflow to help you craft 
+                    professional emails in seconds.
+                  </p>
+                </div>
+
+                {/* Features List */}
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#038762' }}></div>
+                    <span className="text-gray-700">Works with Gmail, Outlook & more</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#038762' }}></div>
+                    <span className="text-gray-700">AI-powered tone suggestions</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#038762' }}></div>
+                    <span className="text-gray-700">One-click email generation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#038762' }}></div>
+                    <span className="text-gray-700">Privacy-focused design</span>
+                  </div>
+                </div>
+
+                {/* Download Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  {/* <a
+                    href="https://drive.google.com/file/d/132PN9Zapf6xvviK9-1SLi7F7vtUi_0Rd/view?usp=drivesdk"
+                    download
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-white transition-all duration-200 transform hover:scale-105 shadow-lg"
+                    style={{ 
+                      backgroundColor: '#038762',
+                      '&:hover': { backgroundColor: '#026B4F' }
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#026B4F'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#038762'}
+                  >
+                    <Chrome className="h-5 w-5 mr-2" />
+                    Add to Chrome
+                  </a> */}
+                  <a
+                    href="https://drive.google.com/file/d/132PN9Zapf6xvviK9-1SLi7F7vtUi_0Rd/view?usp=drivesdk"
+                    download
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium border-2 transition-all duration-200 hover:shadow-md"
+                    style={{
+                      borderColor: '#038762',
+                      color: '#038762',
+                      '&:hover': { backgroundColor: '#E8F5E8' }
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#E8F5E8'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+                  >
+                    <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Download ZIP
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Content - Preview */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 shadow-inner">
+                  {/* Browser Window Mockup */}
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    {/* Browser Header */}
+                    <div className="flex items-center space-x-2 px-4 py-3 bg-gray-100 border-b">
+                      <div className="flex space-x-1">
+                        <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                      </div>
+                      <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500">
+                        gmail.com
+                      </div>
+                    </div>
+                    
+                    {/* Email Interface */}
+                    <div className="p-4 space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 rounded-full" style={{ backgroundColor: '#038762' }}></div>
+                        <div className="flex-1">
+                          <div className="text-xs text-gray-500">To: john@company.com</div>
+                          <div className="text-sm font-medium">Re: Project Update</div>
+                        </div>
+                      </div>
+                      
+                      <div className="border rounded-lg p-3 bg-gray-50">
+                        <div className="text-xs text-gray-600 mb-2">ReplyGenius AI</div>
+                        <div className="text-sm text-gray-800">
+                          "Thank you for your email. I'll review the project details and get back to you by Friday..."
+                        </div>
+                        <div className="flex items-center justify-between mt-3 pt-2 border-t">
+                          <span className="text-xs text-gray-500">Professional tone</span>
+                          {/* <button className="text-xs px-2 py-1 rounded text-white" style={{ backgroundColor: '#038762' }}>
+                            Use This
+                          </button> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer className="bg-gray-800 text-white py-6 mt-12">
@@ -205,9 +310,9 @@ function App() {
             <div className="mb-4 md:mb-0">
               <h3 className="text-lg font-semibold flex items-center">
                 <Mail className="h-5 w-5 mr-2" />
-                Email AI Assistant
+                ReplyGenius
               </h3>
-              <p className="text-gray-400 text-sm mt-1">Craft perfect emails with AI assistance</p>
+              <p className="text-gray-400 text-sm mt-1">Your Email Assistant - Craft perfect emails with AI</p>
             </div>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition duration-200">
