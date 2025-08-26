@@ -1,6 +1,8 @@
 # 🤖 ReplyGenius - AI-Powered Email Reply Generator
 
-![ReplyGenius Logo](client/public/replygenius-logo.svg)
+<div align="center">
+  <img src="client/public/replygenius-logo.svg" alt="ReplyGenius Logo" width="300"/>
+</div>
 
 **Your intelligent email assistant that crafts perfect replies with AI**
 
@@ -13,7 +15,9 @@
 
 ReplyGenius is an intelligent email assistant that helps you craft professional, well-structured email replies using advanced AI technology. Whether you need a formal business response or a casual friendly reply, ReplyGenius adapts to your preferred tone and generates contextually appropriate content in seconds.
 
-![ReplyGenius Screenshot](client/public/Screenshot%202025-08-26%20032854-Picsart-BackgroundRemover.png)
+<div align="center">
+  <img src="client/public/Screenshot%202025-08-26%20032854-Picsart-BackgroundRemover.png" alt="ReplyGenius Screenshot" width="600"/>
+</div>
 
 ## 🌟 Features
 
