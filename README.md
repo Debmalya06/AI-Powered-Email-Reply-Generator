@@ -71,14 +71,14 @@ Experience ReplyGenius live: **[https://ai-powered-email-reply-generator-1.onren
 ## 📱 Images
 
 ### Main Application Interface
-![Main Interface](client/public/images/img1.png)
-![Main Interface](client/public/images/img2.png)
+![Main Interface](client/images/img1.png)
+![Main Interface](client/images/img2.png)
 
 
 ### Chrome Extension Integration
 *The extension seamlessly integrates with your favorite email platforms*
-![Extension Interface](client/public/images/img3.png)
-![Extension Interface](client/public/images/img4.png)
+![Extension Interface](client/images/img3.png)
+![Extension Interface](client/images/img4.png)
 ## 🏗️ Project Structure
 
 ```
